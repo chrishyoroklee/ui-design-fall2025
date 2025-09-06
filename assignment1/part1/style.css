@@ -1,54 +1,98 @@
 body{
     background-color: aqua;
+    margin: 0;
+    padding: 50px;
+    font-family: 'Arial', sans-serif;
 }
-#wrapper{
+
+#wrapper {
     display: flex;
-    width: 750px;
-    height: 870px;
+    width: 350px;
+    height: 370px;
     background: white;
-    margin: 150px auto;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
 }
 
-#card{
+#card {
     background-color: white;
-    width: 600px;
-    height: 720px;
-    border: 5px solid black;
-    padding: 35px;
-    margin: 50px auto;
-    font-family: Roboto;
+    width: 320px;
+    height: 340px;
+    border: 3px solid black;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* header section */
-#card-header{
-    width: 560px;
-    height: 120px;
-    padding: 15px;
-    border: 5px solid black;
-    margin: auto;
+#card-header {
     background-color: yellow;
-    font-weight: bold;
+    border: 2px solid black;
+    padding: 8px;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .title1{
-    font-size: 45px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
 }
 
 .title2{
-    font-size: 50px;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
 /* content section */
-#card-content{
+#rent-section {
     text-align: center;
-    font-size: 42px;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+#rental-table {
+    font-size: 16px;
+    margin-bottom: 2px;
+    padding: 0 50px;
+}
+
+.rental-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.rental-left {
+    text-align: left;
+}
+
+.rental-right {
+    text-align: right;
+}
+
+#mortgage-section {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.mortgage-row {
+    margin-bottom: 2px;
 }
 
 /* bottom section */
-#bottom-section{
+#bottom-section {
+    font-size: 12px;
     text-align: center;
-    font-size: 25px;
+    line-height: 1.2;
+}
+
+.fine-print {
+    margin-bottom: 3px;
+}
+
+.copyright {
+    font-size: 12px;
 }
