@@ -2,6 +2,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 #frame {
     background-color: #f4f4f4;
     display: flex;
@@ -11,11 +16,11 @@
 
 #form {
     background-color: white;
-    width: 40%;
+    width: 80%;
     height: 100%;
     margin: 50px;
-    border: 3px solid black;
-    border-radius: 3px;
+    border: 3px solid white;
+    border-radius: 10px;
 }
 
 /*top section*/
@@ -33,22 +38,28 @@ option {
     size: 1.17em;
 }
 
-#top button {
+button {
+    border: 1px white solid;
+    border-radius: 3px;
+}
+
+.top-buttons {
     background-color: #007bff;
     color: white;
+    width: 10%;
+    min-width: 50px;
 }
+
+.top-buttons:hover{
+    background-color: #0056b3;
+}
+
 #teammate-name {
     padding: 1%;
 }
 #teammate-name input[type="text"]{
     width: 80%;
     height: 10%;
-    /* border: 1px;
-    border-radius: 5%; */
-}
-
-#teammate-name button{
-    width: 10%;
 }
 
 #task select{
@@ -63,13 +74,11 @@ option {
     width: 26%;
 }
 
-#task button{
-    width: 10%;
-}
-
 hr {
     width: 87%;
+    color: #f4f4f4;
 }
+
 /*main content section*/
 #main-content{
     text-align: center;
@@ -79,12 +88,47 @@ h2 {
     size: 1.17em;
 }
 
-/*bottom section*/
-#bottom{
-    padding: 10%;
+text {
+    size: 1.17em;
 }
 
-#bottom-buttons{
+.task-wrapper{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    background-color: #f4f4f4;
+    box-shadow: 10px;
+    border-radius: 5px;
+    width: 87%;
+    margin: 0.5%;
+    padding: 1%;
+}
+
+/*bottom section*/
+#bottom{
+    padding: 3%;
+}
+
+#clear-button{
+    color: white;
+    background-color: #64d05e;
+}
+
+#clear-button:hover {
+  background-color: #4ea649;
+}
+
+#reset-button{
+    color: white;
+    background-color: #c3c3c3;
+}
+
+#reset-button:hover {
+    background-color: #8f8f8f;
 }
