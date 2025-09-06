@@ -1,0 +1,90 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#frame {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+#form {
+    background-color: white;
+    width: 40%;
+    height: 100%;
+    margin: 50px;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+
+/*top section*/
+#top {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    size: 2em;
+    font-weight: bold;
+}
+
+option {
+    size: 1.17em;
+}
+
+#top button {
+    background-color: #007bff;
+    color: white;
+}
+#teammate-name {
+    padding: 1%;
+}
+#teammate-name input[type="text"]{
+    width: 80%;
+    height: 10%;
+    /* border: 1px;
+    border-radius: 5%; */
+}
+
+#teammate-name button{
+    width: 10%;
+}
+
+#task select{
+    width: 20%;
+}
+
+#task input[type="text"]{
+    width: 30%;
+}
+
+#task input[type="date"]{
+    width: 26%;
+}
+
+#task button{
+    width: 10%;
+}
+
+hr {
+    width: 87%;
+}
+/*main content section*/
+#main-content{
+    text-align: center;
+}
+
+h2 {
+    size: 1.17em;
+}
+
+/*bottom section*/
+#bottom{
+    padding: 10%;
+}
+
+#bottom-buttons{
+    display: flex;
+    justify-content: center;
+}
