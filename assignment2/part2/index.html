@@ -4,6 +4,7 @@
         <title>To-Do List</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="buttonLogic.js"></script>
     </head>
 
     <body>
@@ -13,12 +14,11 @@
                     <h1>To-Do List</h1>
                     <div id="teammate-name">
                         <input type="text" placeholder="Teammate Name" id="input1">
-                        <button class="top-buttons">Add</button>
+                        <button class="top-buttons" id="add-button">Add</button>
                     </div>
                     <div id="task">
-                        <select required>
+                        <select required id="selectId">
                             <option value="" disabled selected hidden>Assign to</option>
-                            <option>Daniel</option>
                         </select>
                         <input type="text" placeholder="Task">
                         <input type="date">
