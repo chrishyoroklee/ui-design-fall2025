@@ -3,6 +3,7 @@
     <head>
         <title>To-Do List</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     </head>
 
     <body>
@@ -15,8 +16,9 @@
                         <button class="top-buttons">Add</button>
                     </div>
                     <div id="task">
-                        <select>
-                            <option>Leo</option>
+                        <select required>
+                            <option value="" disabled selected hidden>Assign to</option>
+                            <option>Daniel</option>
                         </select>
                         <input type="text" placeholder="Task">
                         <input type="date">
