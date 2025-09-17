@@ -1,0 +1,157 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#frame {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    min-height: 100vh;
+}
+
+#form {
+    background-color: white;
+    width: 80%;
+    height: auto;
+    margin: 50px;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*top section*/
+#top {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+option {
+    font-size: 1.17em;
+}
+
+button {
+    border: 1px white solid;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.top-buttons {
+    background-color: #007bff;
+    color: white;
+    width: 10%;
+    min-width: 50px;
+    height: 36px;
+}
+
+.top-buttons:hover{
+    background-color: #0056b3;
+}
+
+#teammate-name {
+    padding: 1%;
+}
+
+#teammate-name input[type="text"]{
+    width: 75%;
+    height: 30px;
+}
+
+#task select{
+    width: 14.5%;
+    height: 30px;
+    color: gray;
+}
+
+#task select:invalid {
+    color: gray;
+}
+
+#task select:valid {
+    color: black;
+}
+
+#task input[type="text"]{
+    width: 37.5%;
+    height: 30px;
+}
+
+#task input[type="date"]{
+    width: 20%;
+    height: 30px;
+}
+
+hr {
+    width: 80%;
+    color: #f4f4f4;
+}
+
+/*main content section*/
+#main-content{
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+text {
+    font-size: 1em;
+}
+
+.task-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0.5%;
+    padding: 1%;
+}
+
+/*bottom section*/
+#bottom{
+    padding: 2%;
+}
+
+#clear-button{
+    color: white;
+    background-color: #64d05e;
+    font-size: 0.81em;
+    transition: background-color 0.3s;
+    height: 30px;
+}
+
+#clear-button:hover {
+  background-color: #4ea649;
+}
+
+#reset-button{
+    color: white;
+    background-color: #c3c3c3;
+    font-size: 0.81em;
+    transition: background-color 0.3s;
+    height: 30px;
+}
+
+#reset-button:hover {
+    background-color: #8f8f8f;
+}

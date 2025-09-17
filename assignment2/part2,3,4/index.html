@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="buttonLogic.js"></script>
+    </head>
+
+    <body>
+        <div id="frame">
+            <div id="form">
+                <div id="top">
+                    <h1>To-Do List</h1>
+                    <div id="teammate-name">
+                        <input type="text" placeholder="Teammate Name" id="input1">
+                        <button class="top-buttons" id="add-button">Add</button>
+                    </div>
+                    <div id="task">
+                        <select required id="selectId">
+                            <option value="" id="assign-option" selected>Assign to</option>
+                        </select>
+                        <input type="text" placeholder="Task">
+                        <input type="date">
+                        <button class="top-buttons">Assign</button>
+                    </div>
+                </div>
+                <hr/>
+                <div id="main-content">
+                    <div class="content-1">
+                        <h2>Arnavi</h2>
+                        <div id="task-1" class="task-wrapper">
+                            <div class="tasks">
+                                <text>Set up Flask server</text>
+                                <div id="checkbox-details-1">
+                                    <text>Due: 2099-10-01</text>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="tasks">
+                                <text>Set up Git repo</text>
+                                <div id="checkbox-details-2">
+                                    <text>Due: 2099-10-01</text>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-2">
+                        <h2>Laura</h2>
+                        <div id="task-2" class="task-wrapper">
+                            <div class="tasks">
+                            <text>Draft weekly plan</text>
+                            <div id="checkbox-details-2">
+                                <text>Due: 2099-09-28</text>
+                                <input type="checkbox">
+                            </div>
+                            </div>
+                        </div>     
+                    </div>
+                    <div class="content-3">
+                        <h2>Leo</h2>
+                        <div id="task-3" class="task-wrapper">
+                            <div class="tasks">
+                            <text>Survey existing apps</text>
+                            <div id="checkbox-details-2">
+                                <text>Due: 2099-09-28</text>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+
+                <div id="bottom">
+                    <div id="bottom-buttons">
+                        <button id="clear-button">
+                            Clear Completed
+                        </button>
+                        <button id="reset-button">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
