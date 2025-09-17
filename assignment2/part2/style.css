@@ -73,6 +73,10 @@ button {
     color: gray;
 }
 
+#task select:invalid {
+    color: gray;
+}
+
 #task select:valid {
     color: black;
 }
