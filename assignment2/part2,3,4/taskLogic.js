@@ -58,6 +58,7 @@ function addTask(teammateName, task, date){
 
     /*sort tasks*/
     sortTasksByDate(taskWrapper);
+    sortTeammatesByName();
 }
 
 function sortTasksByDate(taskWrapper){
@@ -81,6 +82,20 @@ function sortTasksByDate(taskWrapper){
 
     tasks.forEach(task => task.remove());
     tasks.forEach(task => taskWrapper.appendChild(task));
+}
+
+function sortTeammatesByName(){
+    const mainContent = document.getElementById("main-content");
+    const teammateSections = Array.from(mainContent.querySelectorAll('.content[teammate]'));
+
+    teammateSections.sort((a,b) => {
+        const nameA = a.getAttribute('teammate');
+        const nameB = b.getAttribute('teammate');
+        return nameA.localeCompare(nameB);
+    })
+
+    teammateSections.forEach(section => section.remove());
+    teammateSections.forEach(section => mainContent.appendChild(section));
 }
 
 function compareDate(date, currDate){
