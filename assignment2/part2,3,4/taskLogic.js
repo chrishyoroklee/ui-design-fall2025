@@ -43,6 +43,14 @@ function addTask(teammateName, task, date){
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            taskText.style.textDecoration = 'line-through';
+        } else {
+            taskText.style.textDecoration = 'none';
+        }
+    });
+
     /*append children to its parents*/
     checkboxDetails.append(checkboxText, checkbox);
     individualTask.append(taskText, checkboxDetails);
@@ -130,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const taskInput = document.getElementById("input-task");
     const dateInput = document.getElementById("input-date");
 
+    /* Assign button logic */
     assignButton.addEventListener("click", function() {
         const teammateName = selectElement.value;
         const task = taskInput.value;
@@ -151,4 +160,5 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         
     });
+
 });
