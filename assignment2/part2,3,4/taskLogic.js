@@ -29,8 +29,9 @@ function addTask(teammateName, task, date){
     const taskWrapper = teammateSection.querySelector(".task-wrapper");
     const individualTask = document.createElement("div");
     individualTask.className = "tasks";
+    individualTask.setAttribute("task-date", date);
 
-    const taskText = document.createElement("text");
+    const taskText = document.createElement("span");
     taskText.textContent = task;
 
     const checkboxDetails = document.createElement("div");
@@ -46,8 +47,34 @@ function addTask(teammateName, task, date){
     checkboxDetails.append(checkboxText, checkbox);
     individualTask.append(taskText, checkboxDetails);
     taskWrapper.appendChild(individualTask);
+
+    /*sort tasks*/
+    sortTasksByDate(taskWrapper);
 }
-//2012-05-24 2025-09-18
+
+function sortTasksByDate(taskWrapper){
+    const tasks = Array.from(taskWrapper.querySelectorAll('.tasks'));
+
+    tasks.sort((a,b) => {
+        const dateA = a.getAttribute('task-date');
+        const dateB = b.getAttribute('task-date');
+
+        if (!dateA && !dateB) {
+            return 0;
+        }
+        if (!dateA){
+            return 1;
+        }
+        if (!dateB){
+            return -1;
+        }
+        return dateA.localeCompare(dateB);
+    })
+
+    tasks.forEach(task => task.remove());
+    tasks.forEach(task => taskWrapper.appendChild(task));
+}
+
 function compareDate(date, currDate){
     if (!date) {
         return false;
@@ -111,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(){
         /*make sure input date is after today's date*/
         const currDate = new Date();
         const checkDate = compareDate(date, currDate);
-        console.log(checkDate);
+
         // make sure teammateName, task, date is chosen
         if (teammateName && task && date && checkDate) {
             addTask(teammateName, task, date);
