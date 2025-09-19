@@ -43,6 +43,7 @@ function addTask(teammateName, task, date){
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
+    /* mark completed tasks */
     checkbox.addEventListener('change', function() {
         if (this.checked) {
             taskText.style.textDecoration = 'line-through';
@@ -133,17 +134,6 @@ function compareDate(date, currDate){
             return inputDate >= todaysDate;
         }  
 
-    }
-}
-
-//Add back the placeholder if all tasks are cleared
-function showPlaceholder(){
-    const mainElement = document.getElementById("main-content");
-    if (mainElement.children.length == 0) {
-        const placeholder = document.createElement('div');
-        placeholder.id = "task-placeholder";
-        placeholder.textContent = "No tasks right now. Please add a teammate and assign a task";
-        mainElement.appendChild(placeholder);
     }
 }
 

@@ -32,9 +32,21 @@ function sortSelect(select){
     select.value = currentSelectedValue;
 }
 
+//Add back the placeholder if all tasks are cleared
+function showPlaceholder(){
+    const mainElement = document.getElementById("main-content");
+    if (mainElement.children.length == 0) {
+        const placeholder = document.createElement('div');
+        placeholder.id = "task-placeholder";
+        placeholder.textContent = "No tasks right now. Please add a teammate and assign a task";
+        mainElement.appendChild(placeholder);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const addButton = document.getElementById("add-button");
     const inputField = document.getElementById("input1");
+    const clearButton = document.getElementById("clear-button");
 
     addButton.addEventListener("click", function(){
         const inputText = inputField.value.trim();
@@ -56,5 +68,37 @@ document.addEventListener("DOMContentLoaded", function() {
         addTeammate(inputText);
         sortSelect(selectContainer);
         inputField.value = "";
+    });
+
+    /* Click clearCompleted button to remove checked checkboxes */
+    clearButton.addEventListener("click", function(){
+        const mainContent = document.getElementById("main-content");
+        const checkboxes = Array.from(mainContent.querySelectorAll("input"));
+
+        const teammateSections = new Set();
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked){
+                // Find the parent .tasks div and remove it
+                const taskDiv = checkbox.closest('.tasks');
+                const teammateSection = checkbox.closest('.content');
+
+                if (taskDiv) {
+                    taskDiv.remove();
+                    if (teammateSection) {
+                        teammateSections.add(teammateSection);
+                    }
+                }
+            }
+        });
+
+        /* If teammate section is empty, remove section */
+        teammateSections.forEach(section => {
+            const remainingTasks = section.querySelectorAll('.tasks');
+            if (remainingTasks.length == 0) {
+                section.remove();
+                showPlaceholder();
+            }
+        });
     });
 })
