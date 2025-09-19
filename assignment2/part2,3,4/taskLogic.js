@@ -50,6 +50,8 @@ function addTask(teammateName, task, date){
         } else {
             taskText.style.textDecoration = 'none';
         }
+
+        saveToLocalStorage();
     });
 
     /*append children to its parents*/
@@ -160,6 +162,8 @@ document.addEventListener("DOMContentLoaded", function(){
             taskInput.value = '';
             dateInput.value = '';
             selectElement.selectedIndex = 0; 
+
+            saveToLocalStorage();
         } else {
             alert("Please select a teammate, enter a task, and enter a correct date to continue");
         }
