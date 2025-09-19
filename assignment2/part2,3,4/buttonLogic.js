@@ -46,7 +46,6 @@ function showPlaceholder(){
 document.addEventListener("DOMContentLoaded", function() {
     const addButton = document.getElementById("add-button");
     const inputField = document.getElementById("input1");
-    const clearButton = document.getElementById("clear-button");
 
     addButton.addEventListener("click", function(){
         const inputText = inputField.value.trim();
@@ -69,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
         sortSelect(selectContainer);
         inputField.value = "";
     });
+
+    const clearButton = document.getElementById("clear-button");
 
     /* Click clearCompleted button to remove checked checkboxes */
     clearButton.addEventListener("click", function(){
@@ -101,4 +102,21 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-})
+
+    /* Reset button */
+    const resetButton = document.getElementById("reset-button");
+    const selectOptions = document.getElementById("selectId");
+    resetButton.addEventListener("click", function(){
+        const confirmation = confirm("Are you sure you want to delete everything and reset?");
+        if (!confirmation) {
+            return;
+        }
+
+        const mainContent = document.getElementById("main-content");
+        mainContent.innerHTML = ""; 
+        selectOptions.innerHTML = '<option value="" id="assign-option" selected>Assign to</option>';
+
+        showPlaceholder();
+    });
+
+});
